@@ -1,10 +1,55 @@
-# User Guide
+# CPU Scheduling Algorithms – Kullanım Kılavuzu
 
-## Projeyi Çalıştırma
-1. data klasörü içinde case1 ve case2 dosyaları bulunur.
-2. src klasöründeki algoritma dosyaları çalıştırılır.
-3. Sonuçlar otomatik olarak results klasörüne yazılır.
+Bu doküman, İşletim Sistemleri dersi kapsamında hazırlanan
+**CPU Zamanlama Algoritmaları Ödevi** amacıyla hazırlanmıştır.  
+Ödev, algoritmaların yapısını, amacını ve nasıl inceleneceğini açıklamak için hazırlanmıştır.
+Bu ödev, proje formatında hazırlanmıştır.
+---
 
-## Çıktılar
-- Her algoritma için ayrı çıktı dosyası oluşturulur.
-- Case 1 ve Case 2 sonuçları birbirinden bağımsızdır.
+## 1. Projenin Amacı
+Bu projenin amacı, CPU zamanlama algoritmalarının çalışma mantığını
+kavramsal olarak incelemek ve farklı süreç senaryoları üzerinden
+algoritmalar arasındaki farkları ortaya koymaktır.
+
+CPU zamanlama algoritmaları, bir işletim sisteminde birden fazla sürecin
+CPU’yu hangi sırayla ve ne kadar süreyle kullanacağını belirleyen temel
+mekanizmalardır.
+
+---
+
+## 2. Proje Yapısı
+
+Proje aşağıdaki klasör yapısına sahiptir:
+
+- **data/**  
+  Süreçlere ait giriş verilerinin bulunduğu klasördür.  
+  Her süreç için işlem kimliği (Process ID), varış zamanı (Arrival Time),
+  CPU patlama süresi (CPU Burst Time) ve öncelik bilgileri yer alır.
+
+- **src/**  
+  Zamanlama algoritmalarının mantıksal ve kavramsal tanımlarının
+  yer alması için ayrılmıştır.  
+  İleride algoritmaların kodlanması durumunda bu klasör kullanılabilir.
+
+- **report/**  
+  Algoritmaların analiz edildiği ve karşılaştırıldığı rapor dosyaları
+  bu klasörde yer alır.
+
+- **results/**  
+  Algoritmaların ürettiği çıktılar, ortalama bekleme süresi,
+  dönüş süresi gibi performans ölçütleri bu klasörde saklanır.
+
+- **web/**  
+  Projenin ileride web tabanlı bir arayüz ile desteklenmesi ihtimali için
+  ayrılmıştır.  
+  Şu an için yalnızca proje yapısının bütünlüğünü sağlamak amacıyla bulunmaktadır.
+
+---
+
+## 3. Ele Alınan Zamanlama Algoritmaları
+Bu proje kapsamında aşağıdaki CPU zamanlama yaklaşımları incelenmiştir:
+
+- FCFS (First Come First Served)
+- SJF (Shortest Job First)
+- Priority Scheduling
+- Preemptive ve Non-Preemptive yaklaşımlar
