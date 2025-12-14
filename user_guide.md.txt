@@ -1,0 +1,10 @@
+# User Guide
+
+## Projeyi Çalıştırma
+1. data klasörü içinde case1 ve case2 dosyaları bulunur.
+2. src klasöründeki algoritma dosyaları çalıştırılır.
+3. Sonuçlar otomatik olarak results klasörüne yazılır.
+
+## Çıktılar
+- Her algoritma için ayrı çıktı dosyası oluşturulur.
+- Case 1 ve Case 2 sonuçları birbirinden bağımsızdır.

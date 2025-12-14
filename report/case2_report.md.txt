@@ -1,0 +1,7 @@
+# Case 2 – CPU Scheduling Report
+
+Bu raporda Case 2 veri seti kullanılarak
+CPU zamanlama algoritmaları karşılaştırılmıştır.
+
+Algoritmalar aynı koşullar altında test edilerek
+performans karşılaştırması yapılmıştır.

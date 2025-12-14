@@ -1,0 +1,16 @@
+from utils import read_csv, calc_metrics
+
+def fcfs(path):
+    procs = read_csv(path)
+    time = 0
+
+    for p in procs:
+        if time < p["arrival"]:
+            time = p["arrival"]
+        time += p["burst"]
+        p["finish"] = time
+
+    return calc_metrics(procs)
+
+if __name__ == "__main__":
+    print(fcfs("../data/case1.csv"))

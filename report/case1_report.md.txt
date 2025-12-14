@@ -1,0 +1,20 @@
+# Case 1 – CPU Scheduling Report
+
+Bu raporda Case 1 veri seti kullanılarak aşağıdaki
+CPU zamanlama algoritmaları test edilmiştir:
+
+- FCFS
+- Preemptive SJF
+- Non-Preemptive SJF
+- Round Robin
+- Preemptive Priority
+- Non-Preemptive Priority
+
+## Değerlendirilen Metrikler
+
+- Zaman Tablosu (Gantt Chart)
+- Ortalama ve Maksimum Bekleme Süresi
+- Ortalama ve Maksimum Turnaround Süresi
+- Throughput (T = 50, 100, 150, 200)
+- Ortalama CPU Verimliliği
+- Toplam Bağlam Değiştirme Sayısı

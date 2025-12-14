@@ -1,0 +1,32 @@
+from utils import read_csv, calc_metrics
+from collections import deque
+
+def rr(path, q=4):
+    procs = read_csv(path)
+    queue = deque()
+    time = 0
+    i = 0
+
+    while i < len(procs) or queue:
+        while i < len(procs) and procs[i]["arrival"] <= time:
+            queue.append(procs[i])
+            i += 1
+
+        if not queue:
+            time += 1
+            continue
+
+        p = queue.popleft()
+        run = min(q, p["remaining"])
+        p["remaining"] -= run
+        time += run
+
+        if p["remaining"] == 0:
+            p["finish"] = time
+        else:
+            queue.append(p)
+
+    return calc_metrics(procs)
+
+if __name__ == "__main__":
+    print(rr("../data/case1.csv"))

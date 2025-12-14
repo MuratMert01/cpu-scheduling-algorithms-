@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>CPU Scheduling Project</title>
+</head>
+<body>
+
+<h1>CPU Scheduling Algorithms</h1>
+
+<p>
+Bu projede FCFS, SJF, Round Robin ve Priority Scheduling
+algoritmaları karşılaştırılmıştır.
+</p>
+
+<h2>Kullanılan Algoritmalar</h2>
+<ul>
+    <li>FCFS</li>
+    <li>SJF (Preemptive / Non-Preemptive)</li>
+    <li>Round Robin</li>
+    <li>Priority Scheduling</li>
+</ul>
+
+<p>
+Detaylı sonuçlar <b>results</b> klasöründe bulunmaktadır.
+</p>
+
+</body>
+</html>

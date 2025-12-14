@@ -1,0 +1,24 @@
+from utils import read_csv, calc_metrics
+
+def priority_p(path):
+    procs = read_csv(path)
+    time, finished = 0, 0
+
+    while finished < len(procs):
+        ready = [p for p in procs if p["arrival"] <= time and p["remaining"] > 0]
+        if not ready:
+            time += 1
+            continue
+
+        p = max(ready, key=lambda x: x["priority"])
+        p["remaining"] -= 1
+        time += 1
+
+        if p["remaining"] == 0:
+            p["finish"] = time
+            finished += 1
+
+    return calc_metrics(procs)
+
+if __name__ == "__main__":
+    print(priority_p("../data/case1.csv"))

@@ -1,0 +1,27 @@
+import csv
+
+PRIORITY_MAP = {"high": 3, "normal": 2, "low": 1}
+
+def read_csv(path):
+    processes = []
+    with open(path) as f:
+        reader = csv.DictReader(f)
+        for r in reader:
+            processes.append({
+                "id": r["Process_ID"],
+                "arrival": int(r["Arrival_Time"]),
+                "burst": int(r["CPU_Burst_Time"]),
+                "remaining": int(r["CPU_Burst_Time"]),
+                "priority": PRIORITY_MAP[r["Priority"]],
+                "finish": None
+            })
+    return processes
+
+def calc_metrics(processes):
+    wt, tat = [], []
+    for p in processes:
+        t = p["finish"] - p["arrival"]
+        w = t - p["burst"]
+        wt.append(w)
+        tat.append(t)
+    return sum(wt)/len(wt), sum(tat)/len(tat)

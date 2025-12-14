@@ -1,0 +1,22 @@
+from utils import read_csv, calc_metrics
+
+def sjf_np(path):
+    procs = read_csv(path)
+    done = []
+    time = 0
+
+    while len(done) < len(procs):
+        ready = [p for p in procs if p["arrival"] <= time and p not in done]
+        if not ready:
+            time += 1
+            continue
+
+        p = min(ready, key=lambda x: x["burst"])
+        time += p["burst"]
+        p["finish"] = time
+        done.append(p)
+
+    return calc_metrics(procs)
+
+if __name__ == "__main__":
+    print(sjf_np("../data/case1.csv"))
